@@ -7,15 +7,24 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+
 a,
 button {
     transition: all .3s ease-in-out;
     outline: none!important;
+    text-decoration: none;
+    padding: 10px 15px;
 }
 
 a:hover {
-    text-decoration: none;
-    cursor: pointer;
+    
+    cursor: pointer;  
+}
+
+.ul__a:hover
+{
+    border-bottom: 2px solid #000;
+    
 }
 
 #page-loading-blocs-notifaction {
@@ -31,7 +40,6 @@ a:hover {
     width: 100%;
     clear: both;
     background: 50% 50% no-repeat;
-    padding: 0 50px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -40,12 +48,27 @@ a:hover {
 }
 
 .bloc .container {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 50px;
+    padding-right:0;
 }
+
+.navbar-header > .keywords{
+    color:#cccccc;
+    font-size:1px;
+}
+
 
 .bloc-lg {
     padding: 100px 50px;
+}
+
+.center-block
+{
+    width: 100px;
+}
+
+.col-sm-3 > .keywords{
+    color:#F3976C;
 }
 
 .bloc-md {
@@ -93,6 +116,8 @@ a:hover {
 .texture-paper::before {
     background: url("img/texture-paper.png");
     background-size: 280px 280px;
+    max-width: 1400px;
+    padding: 0;
 }
 
 .b-parallax {
@@ -309,6 +334,7 @@ a:hover {
 
 .navbar-brand img[src$=svg] {
     min-width: 100px;
+    height: 40px;
 }
 
 .nav-center .navbar-brand img {
@@ -317,15 +343,18 @@ a:hover {
 
 .navbar .nav {
     padding-top: 2px;
-    margin-right: -16px;
     float: right;
     z-index: 1;
 }
 
 .nav > li {
-    float: left;
+   
     margin-top: 4px;
     font-size: 16px;
+    list-style-type: none;
+    float: left;
+    margin-left: 1rem;
+    
 }
 
 .navbar-nav .open .dropdown-menu > li > a {
@@ -335,11 +364,13 @@ a:hover {
 .nav > li a:hover,
 .nav > li a:focus {
     background: transparent;
+    
 }
 
 .navbar-toggle {
     margin: 10px 10px 0 0;
     border: 0px;
+    visibility: hidden;
 }
 
 .navbar-toggle:hover {
@@ -360,6 +391,22 @@ a:hover {
     float: right;
     position: relative;
     z-index: 2;
+}
+
+#navbar__page2
+{
+    margin-right: 12rem;
+    padding-bottom: 2rem;
+}
+
+#link__page2
+{
+    padding-bottom: 15px;
+}
+
+#link2__page2
+{
+    padding-bottom: 15px;
 }
 
 @media (min-width: 768px) {
@@ -505,9 +552,20 @@ button {
     border-radius: 0 0 29px 29px;
 }
 
-.form-control {
-    border-color: rgba(0, 0, 0, .1);
+input
+{
+    border-color: rgba(0, 0, 0, .8);
     box-shadow: none;
+    width: 50%;
+    height:30px;
+    margin-bottom: 1rem;
+}
+
+#message{
+    height:80px;
+    background-color: #FFF;
+    border-color: rgba(0, 0, 0, .8);
+    width:75%;
 }
 
 .scrollToTop {
@@ -646,12 +704,18 @@ h4,
 h5,
 h6,
 p,
-label,
 .btn,
 a {
     font-family: "helvetica";
     font-weight: 400;
-    color: #575757!important;
+    color: #000!important;
+}
+
+
+label{
+    font-family: "helvetica";
+    font-weight: 400;
+    color:#000000;
 }
 
 .container {
@@ -660,10 +724,12 @@ a {
 
 .hero-bloc-text {
     font-size: 38px;
+    
 }
 
 .hero-bloc-text-sub {
     font-size: 36px;
+    
 }
 
 .statement-bloc-text {
@@ -677,12 +743,14 @@ a {
 }
 
 p {
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .tight-width-whitespace {
     max-width: 600px;
     margin: auto auto auto auto;
+    font-size: 18px;
+    
 }
 
 .h1 {
@@ -710,10 +778,10 @@ h2 {
 }
 
 h3 {
-    font-size: 15px;
+    font-size: 18px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #333333!important;
+    color: #000!important;
 }
 
 .med-width-whitespace {
@@ -736,7 +804,16 @@ h4 {
 }
 
 .white {
-    color: #FFFFFF!important;
+    color: #000!important;
+    font-size: 14px;
+    
+    
+}
+
+.black{
+    color: #000!important;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .portfolio-thumb {
@@ -775,17 +852,20 @@ h4 {
 }
 
 .tc-white {
-    color: #F3976C!important;
+    color: #000!important;
+    
 }
 
 .btn-atomic-tangerine {
-    background: #F3976C;
-    color: #FFFFFF!important;
+    background: #eb8759;
+    color: #000!important;
+    box-shadow: 5px 5px 10px rgb(56, 55, 55);
 }
 
 .btn-atomic-tangerine:hover {
-    background: #c27956!important;
+    background: #99502d!important;
     color: #FFFFFF!important;
+    
 }
 
 .ltc-white {
@@ -823,6 +903,7 @@ h4 {
 
 .bg-presentation {
     background-image: url("img/image-de-presentation.bmp");
+    padding: 0;
 }
 
 @media (max-width: 1024px) {
