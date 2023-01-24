@@ -16,6 +16,9 @@ button {
     padding: 10px 15px;
 }
 
+#envoyer{
+    width:auto;
+}
 a:hover {
     
     cursor: pointer;  
@@ -68,7 +71,6 @@ a:hover {
     
 }
 
-
 .bloc-lg {
     padding: 100px 50px;
 }
@@ -112,8 +114,6 @@ a:hover {
 
 .bg-t-edge {
     background: 50% 50% no-repeat;
-    
-    
 }
 
 .bloc-bg-texture::before {
@@ -422,6 +422,10 @@ a:hover {
 {
     padding-bottom: 15px;
 }
+#paragraphe__citation
+{
+    font-style: italic;
+}
 
 @media (min-width: 768px) {
     .site-navigation {
@@ -575,17 +579,10 @@ button {
     height:30px;
     margin-bottom: 1rem;
 }
-
-.form-control:invalid{
-    border: 2px solid red;
-    transform: translateX(25px);
-    transition: transform 3s;
-}
-
-.form-control:required{
-    border: 2px solid red;
-    transform: translateX(25px);
-    transition: transform 3s;
+#row__form1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #message{
@@ -593,10 +590,10 @@ button {
     background-color: #FFF;
     border-color: rgba(0, 0, 0, .8);
     width:75%;
-    margin-left:3%;
+    
 }
 
-#envoyer, #paragraphe{
+#paragraphe{
     margin-left: 3%;
 }
 
@@ -612,6 +609,7 @@ button {
     opacity: 0;
     z-index: 500;
     transition: all .3s ease-in-out;
+    display: none;
 }
 
 .scrollToTop span {
@@ -754,10 +752,7 @@ label{
     
 }
 
-label
-{
-    padding-left: 3%;
-}
+
 
 .container {
     max-width: 1000px;
@@ -941,12 +936,15 @@ h4 {
 
 .bg-banniere {
     background-image: url("img/agence-la-panthere.jpg");
-    
+    min-width: auto;
+    min-height: auto;
 }
 
 .bg-presentation {
     background-image: url("img/image-de-presentation.bmp");
+    background-size: 100% 100%;
     padding: 0;
+    
 }
 
 @media (max-width: 1024px) {
@@ -983,13 +981,13 @@ h4 {
     }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .b-parallax {
         background-attachment: scroll;
     }
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+@media only screen and (min-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
     .b-parallax {
         background-attachment: scroll;
     }
@@ -1009,8 +1007,8 @@ h4 {
         position: relative;
     }
     .bloc {
-        padding-left: constant(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
     }
     .bloc-group,
     .bloc-group .bloc {
@@ -1020,8 +1018,8 @@ h4 {
     .bloc-fill-screen .fill-bloc-top-edge,
     .bloc-fill-screen .fill-bloc-bottom-edge {
         padding: 0 20px;
-        padding-left: constant(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
     }
     .site-navigation{
         position: absolute;
@@ -1050,7 +1048,6 @@ h4 {
         margin-left: 3%;
         padding-left: 0px;
     }
-
     .b-parallax {
         background-attachment: scroll;
     }
@@ -1068,7 +1065,6 @@ h4 {
         transform: none;
         -webkit-transform: none;
         -ms-transform: none;
-        
     }
     .nav > li {
         margin-top: 0;
@@ -1123,25 +1119,12 @@ h4 {
         float: left;
         margin-left: 10px;
     }
-
     #link__page2, #link2__page2{
-        transform: scale(0);
-        text-decoration: none;
-        outline: inherit;
-        line-height: inherit;
-        text-transform: none;
-        overflow-x: hidden;
-        cursor: pointer;
-        color: inherit;
-        padding-bottom: 0;
+        display: none;
+        overflow: hidden;
     }
-    #nav-toggle{
+    #nav-toggle, #link__page2, #link2__page2{
         display: block;
-        transform: scale(1);
-    }
-    #link__page2, #link2__page2{
-        transform: scale(1);
-        transform-origin: top right;
         transition: transform 3s ease-in-out;
         text-decoration: none;
         outline: inherit;
@@ -1153,17 +1136,8 @@ h4 {
         padding: 10px 15px;        
     }
     .nav > li > a {
-
         position: relative;
-        display: block; 
-            
-    }
-    .menu_navbar{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 14px;
-        
+        display: block;   
     }
     #navbar__page2{
         position: inherit;
@@ -1190,6 +1164,7 @@ h4 {
         border-radius: 1px;
         visibility: visible;
         overflow: visible;
+        margin-top: 4px;
     }
     .sr-only
     {
@@ -1198,7 +1173,7 @@ h4 {
         height:1px;
         padding: 0;
         margin:-1px;
-        clip: rect(0, 0, 0, 0);
+        clip-path: rect(0, 0, 0, 0);
         overflow:hidden;
         border: 0;
     }
@@ -1272,7 +1247,6 @@ h4 {
     img{
         width: 100%;
     }
-
     .tight-width-whitespace{
         max-width: 767px;
         
@@ -1302,10 +1276,6 @@ h4 {
     input{
         margin-left: 3%;
     }
-    #envoyer{
-        margin-bottom: 2rem;
-        
-    }
     #footer__paragraphe{
         margin:0;
         padding:0;
@@ -1325,7 +1295,6 @@ h4 {
         padding-bottom: 1rem;
     }
 }
-
 @media (max-width: 400px) {
     .bloc {
         padding-left: 0;
